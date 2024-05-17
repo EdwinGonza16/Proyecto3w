@@ -1,0 +1,40 @@
+.formcrearevento {
+  margin: auto;
+  width: 90%;
+  border: #000 solid 3px;
+}
+
+.lefocrearevento {
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 80px;
+}
+
+.focrearevento{
+    border: #000 solid 1px;
+    width: 25%;
+    margin: 50px auto 50px auto;
+}
+
+.lafocrearevento{
+    padding: 0px 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.infocrearevento{
+    background-color: transparent;
+    margin: 12px 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: #000 1px solid;
+    font-size: 15px;
+    width: 40%;
+}
+
+.infocrearevento:focus{
+    outline: none;
+}
