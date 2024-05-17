@@ -1,0 +1,26 @@
+.profile {
+  margin: auto;
+  text-align: center;
+  width: 45%;
+}
+
+.userimg {
+  margin: 10px 0 0 0;
+  border-radius: 50%;
+  width: 15%;
+  box-shadow: 10px 10px 50px #000000;
+  padding: 5px;
+}
+
+.username {
+  margin: 10px 0 0px 0;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.useremail {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+}

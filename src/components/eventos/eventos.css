@@ -1,0 +1,76 @@
+.fieldseteventos {
+  margin: auto;
+  width: 90%;
+  border: #000 solid 3px;
+  padding: 15px 0 5px 0px;
+}
+
+.legendeventos {
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 80px;
+}
+
+.theadeventos th {
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.thtieventos {
+  width: 16%;
+}
+
+.thdeeventos {
+  width: 36%;
+}
+
+.thfeeventos {
+  width: 10%;
+}
+
+.thhoeventos {
+  width: 8%;
+}
+
+.thubeventos {
+  width: 22%;
+}
+
+.thcaeventos {
+  width: 10%;
+  padding: 0 25px;
+}
+
+.tbodytreventos th {
+  font-size: 17px;
+  padding: 15px 0;
+  margin: 0 0 0 0;
+  font-weight: 500;
+  border-top: #000 solid 1px;
+}
+
+.tbtieventos {
+  border-right: 1px solid;
+}
+
+.tbdeeventos {
+  border-right: 1px solid;
+}
+
+.tbfeeventos {
+  border-right: 1px solid;
+}
+
+.tbhoeventos {
+  border-right: 1px solid;
+}
+
+.tbudeventos {
+  border-right: 1px solid;
+}
+
+.tbcaeventos {
+}
