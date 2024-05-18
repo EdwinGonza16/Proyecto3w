@@ -18,11 +18,12 @@ export const CrearEvento = () => {
       body: JSON.stringify(data),
       headers: { "Content-type": "application/json" },
     })
-      .then((r) => {
-        return r.json().then((data) => ({
+      .then(async (r) => {
+        const data = await r.json();
+        return {
           status: r.status,
           body: data,
-        }));
+        };
       })
       .then((response) => {
         if (response.status === 200) {
@@ -53,6 +54,7 @@ export const CrearEvento = () => {
             name="titulo"
             className="infocrearevento"
             required
+            maxLength="30"
           />
         </div>
 
@@ -65,6 +67,7 @@ export const CrearEvento = () => {
             name="descripcion"
             className="infocrearevento"
             required
+            maxLength="100"
           />
         </div>
 
@@ -96,6 +99,7 @@ export const CrearEvento = () => {
             name="ubicacion"
             className="infocrearevento"
             required
+            maxLength="50"
           />
         </div>
 
@@ -103,12 +107,14 @@ export const CrearEvento = () => {
           <label htmlFor="categoria" className="lafocrearevento">
             Categoria
           </label>
-          <input
-            type="text"
-            name="categoria"
-            className="infocrearevento"
-            required
-          />
+          <select className="infocrearevento" name="categoria" required>
+            <option>Disfraces</option>
+            <option>Baby Shower</option>
+            <option>Boda</option>
+            <option>15 Años</option>
+            <option>Cumpleaños</option>
+            <option>Aniversario</option>
+          </select>
         </div>
 
         <button type="submit" className="loginbuton">
