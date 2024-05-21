@@ -13,6 +13,10 @@
   padding: 0 80px;
 }
 
+.taeventos {
+  margin: auto;
+}
+
 .theadeventos th {
   font-size: 20px;
   font-weight: 700;
@@ -20,28 +24,28 @@
 }
 
 .thtieventos {
-  width: 16%;
+  width: 10%;
 }
 
 .thdeeventos {
-  width: 36%;
+  width: 51%;
 }
 
 .thfeeventos {
-  width: 10%;
-}
-
-.thhoeventos {
   width: 8%;
 }
 
+.thhoeventos {
+  width: 5%;
+}
+
 .thubeventos {
-  width: 22%;
+  width: 17%;
 }
 
 .thcaeventos {
-  width: 10%;
-  padding: 0 25px;
+  width: 9%;
+  /* padding: 0 25px; */
 }
 
 .tbodytreventos th {
@@ -72,4 +76,36 @@
 }
 
 .tbcaeventos {
+  border-right: 1px solid;
+}
+
+.boeleventos {
+  padding: 0;
+  margin-right: 5px;
+  width: 40%;
+  cursor: pointer;
+  background-color: #00000000;
+  border: 0px solid;
+}
+
+.boeleventos:hover{
+  background-color: #0000;
+}
+
+.fa-square-xmark {
+  margin: auto;
+  font-size: 20px;
+}
+
+.fa-square-xmark:hover{
+  color: #ff0000;
+}
+
+.fa-pen-to-square {
+  margin: auto;
+  font-size: 20px;
+}
+
+.fa-pen-to-square:hover{
+  color: #1eff00;
 }

@@ -13,10 +13,10 @@ function App() {
   return (
     <div className="contentapp">
       <div className="app">
-        <Profile />
+        {isAuthenticated ? <Profile /> : <></>}
         {isAuthenticated ? <Logout /> : <Login />}
-        <Eventos />
-        <CrearEvento />
+        {isAuthenticated ? <Eventos /> : <></>}
+        {isAuthenticated ? <CrearEvento /> : <></>}
       </div>
     </div>
   );

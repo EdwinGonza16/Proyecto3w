@@ -1,6 +1,8 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import "./crearEvento.css";
 
 export const CrearEvento = () => {
+  const { isAuthenticated } = useAuth0();
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -39,88 +41,101 @@ export const CrearEvento = () => {
   };
 
   return (
-    <fieldset className="formcrearevento">
-      <legend className="lefocrearevento">
-        {" "}
-        Crea un evento para que las personas puedan asitir{" "}
-      </legend>
-      <form className="focrearevento" onSubmit={handleSubmit}>
-        <div className="difocrearevento">
-          <label htmlFor="titulo" className="lafocrearevento">
-            Titulo
-          </label>
-          <input
-            type="text"
-            name="titulo"
-            className="infocrearevento"
-            required
-            maxLength="30"
-          />
-        </div>
+    <>
+      {isAuthenticated ? (
+        <>
+          <fieldset className="formcrearevento">
+            <legend className="lefocrearevento">
+              {" "}
+              Crea un evento para que las personas puedan asitir{" "}
+            </legend>
+            <form className="focrearevento" onSubmit={handleSubmit}>
+              <div className="difocrearevento">
+                <label htmlFor="titulo" className="lafocrearevento">
+                  Titulo
+                </label>
+                <input
+                  type="text"
+                  name="titulo"
+                  className="infocrearevento"
+                  required
+                  maxLength="30"
+                />
+              </div>
 
-        <div className="difocrearevento">
-          <label htmlFor="descripcion" className="lafocrearevento">
-            Descripcion
-          </label>
-          <input
-            type="text"
-            name="descripcion"
-            className="infocrearevento"
-            required
-            maxLength="100"
-          />
-        </div>
+              <div className="difocrearevento">
+                <label htmlFor="descripcion" className="lafocrearevento">
+                  Descripcion
+                </label>
+                <input
+                  type="text"
+                  name="descripcion"
+                  className="infocrearevento"
+                  required
+                  maxLength="100"
+                />
+              </div>
 
-        <div className="difocrearevento">
-          <label htmlFor="fecha" className="lafocrearevento">
-            Fecha
-          </label>
-          <input
-            type="date"
-            name="fecha"
-            className="infocrearevento"
-            required
-          />
-        </div>
+              <div className="difocrearevento">
+                <label htmlFor="fecha" className="lafocrearevento">
+                  Fecha
+                </label>
+                <input
+                  type="date"
+                  name="fecha"
+                  className="infocrearevento"
+                  required
+                />
+              </div>
 
-        <div className="difocrearevento">
-          <label htmlFor="hora" className="lafocrearevento">
-            Hora
-          </label>
-          <input type="time" name="hora" className="infocrearevento" required />
-        </div>
+              <div className="difocrearevento">
+                <label htmlFor="hora" className="lafocrearevento">
+                  Hora
+                </label>
+                <input
+                  type="time"
+                  name="hora"
+                  className="infocrearevento"
+                  required
+                />
+              </div>
 
-        <div className="difocrearevento">
-          <label htmlFor="ubicacion" className="lafocrearevento">
-            Ubicacion
-          </label>
-          <input
-            type="text"
-            name="ubicacion"
-            className="infocrearevento"
-            required
-            maxLength="50"
-          />
-        </div>
+              <div className="difocrearevento">
+                <label htmlFor="ubicacion" className="lafocrearevento">
+                  Ubicacion
+                </label>
+                <input
+                  type="text"
+                  name="ubicacion"
+                  className="infocrearevento"
+                  required
+                  maxLength="50"
+                />
+              </div>
 
-        <div className="difocrearevento">
-          <label htmlFor="categoria" className="lafocrearevento">
-            Categoria
-          </label>
-          <select className="infocrearevento" name="categoria" required>
-            <option>Disfraces</option>
-            <option>Baby Shower</option>
-            <option>Boda</option>
-            <option>15 Años</option>
-            <option>Cumpleaños</option>
-            <option>Aniversario</option>
-          </select>
-        </div>
+              <div className="difocrearevento">
+                <label htmlFor="categoria" className="lafocrearevento">
+                  Categoria
+                </label>
+                <select className="infocrearevento" name="categoria" required>
+                  <option>Disfraces</option>
+                  <option>Baby Shower</option>
+                  <option>Boda</option>
+                  <option>15 Años</option>
+                  <option>Cumpleaños</option>
+                  <option>Aniversario</option>
+                </select>
+              </div>
 
-        <button type="submit" className="loginbuton">
-          Crear evento
-        </button>
-      </form>
-    </fieldset>
+              <button type="submit" className="loginbuton">
+                Crear evento
+              </button>
+            </form>
+          </fieldset>{" "}
+        </>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
