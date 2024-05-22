@@ -7,12 +7,13 @@ export const Eventos = () => {
   const [eventos, setEventos] = useState([]);
   const { isAuthenticated } = useAuth0();
 
+  const getEventos = () => {
+    fetch("https://api-eventos-3-w.onrender.com/eventos")
+      .then((res) => res.json())
+      .then((res) => setEventos(res));
+  };
+
   useEffect(() => {
-    const getEventos = () => {
-      fetch("https://api-eventos-3-w.onrender.com/eventos")
-        .then((res) => res.json())
-        .then((res) => setEventos(res));
-    };
     getEventos();
   }, []);
 
@@ -23,20 +24,24 @@ export const Eventos = () => {
     fetch("https://api-eventos-3-w.onrender.com/eventos/" + id, requestInit)
       .then((res) => res.text())
       .then((res) => console.log(res));
+    getEventos();
   };
 
-  const handleEdit = (e, id) => {
-    e.preventDefault();
+  const handleEdit = (evento, id) => {
+    /* e.preventDefault(); */
 
     const data = {};
-    data["titulo"] = e.target.titulo.value;
-    data["descripcion"] = e.target.descripcion.value;
-    data["fecha"] = e.target.fecha.value;
-    data["hora"] = e.target.hora.value;
-    data["ubicacion"] = e.target.ubicacion.value;
-    data["categoria"] = e.target.categoria.value;
+    data["titulo"] = evento.titulo;
+    data["descripcion"] = evento.descripcion;
+    data["fecha"] = evento.fecha;
+    data["hora"] = evento.hora;
+    data["ubicacion"] = evento.ubicacion;
+    data["categoria"] = evento.categoria;
 
-    const url = "https://api-eventos-3-w.onrender.com/" + id;
+    console.log("ID recibido para edición:", id);
+    console.log("Datos enviados en la solicitud:", data);
+
+    const url = "https://api-eventos-3-w.onrender.com/eventos/" + id;
     fetch(url, {
       method: "PUT",
       body: JSON.stringify(data),
@@ -52,6 +57,7 @@ export const Eventos = () => {
       .then((response) => {
         if (response.status === 200) {
           alert("evento editado con exito");
+          getEventos();
         } else {
           alert("a ocurrido un error");
         }
@@ -100,7 +106,7 @@ export const Eventos = () => {
 
                   <button
                     className="boeleventos"
-                    onClick={() => handleEdit(evento.id)}
+                    onClick={() => handleEdit(evento, evento.id)}
                   >
                     <i className="fa-solid fa-pen-to-square"></i>
                   </button>
