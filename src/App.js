@@ -15,7 +15,7 @@ function App() {
       <div className="app">
         {isAuthenticated ? <Profile /> : <></>}
         {isAuthenticated ? <Logout /> : <Login />}
-        {isAuthenticated ? <Eventos /> : <></>}
+        <Eventos />
         {isAuthenticated ? <CrearEvento /> : <></>}
       </div>
     </div>

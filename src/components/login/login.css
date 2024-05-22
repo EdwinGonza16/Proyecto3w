@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
 .login {
-  height: 99vh;
   overflow: hidden;
+  margin-bottom: 1%;
 }
 
 .selogin {
-  margin: 18% 0 0 0;
+  margin: 1% 0 0 0;
   font-family: "Poetsen One", sans-serif;
   font-style: normal;
 }
@@ -14,11 +14,11 @@
 .h1login {
   font-size: 30px;
   text-align: center;
-  margin-bottom: 1%;
+  margin-bottom: .5%;
 }
 
 .h2login {
   font-size: 30px;
   text-align: center;
-  margin-bottom: 1.5%;
+  margin-bottom: .5%;
 }
