@@ -12,29 +12,63 @@
   padding: 0 80px;
 }
 
-.focrearevento{
-    border: #000 solid 1px;
-    width: 25%;
-    margin: 50px auto 50px auto;
+.focrearevento {
+  background-color: #ffffff77;
+  /* border-top: #000 5px solid; */
+  border-bottom: #000 5px solid;
+  width: 50%;
+  margin: 50px auto 50px auto;
+  padding: 1% 1%;
 }
 
-.lafocrearevento{
-    padding: 0px 20px;
-    font-size: 20px;
-    font-weight: 600;
+.lafocrearevento {
+  padding: 0px 20px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.infocrearevento{
-    background-color: transparent;
-    margin: 12px 0;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: #000 1px solid;
-    font-size: 15px;
-    width: 40%;
+.infocrearevento {
+  background-color: transparent;
+  margin: 12px 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: #000 1px solid;
+  font-size: 15px;
+  width: 40%;
 }
 
-.infocrearevento:focus{
-    outline: none;
+.infocrearevento:focus {
+  outline: none;
 }
+
+.infocreareventoti {
+  width: 50%;
+}
+
+.infocreareventode {
+  width: 41.5%;
+}
+
+.infocreareventofe {
+  width: 25%;
+  margin: 2% 0 2% 25%;
+}
+
+.infocreareventoho {
+  width: 26%;
+  margin: 2% 0 2% 25.5%;
+}
+
+.infocreareventoub {
+  width: 44%;
+}
+
+.infocreareventoca {
+  width: 19%;
+  margin: 2% 0 3% 26%;
+}
+
+/* .bolocrearevento{
+  margin: 0 auto 0 auto;
+} */

@@ -4,7 +4,7 @@
   font-weight: 500;
   font-size: 14px;
   padding: 8px 10px;
-  margin: 10px auto;
+  margin: 1% auto 2% auto;
   color: white;
   background: rgb(0, 0, 0);
   border: none;
@@ -14,7 +14,6 @@
   cursor: pointer;
   position: relative;
   font-optical-sizing: auto;
-  font-style: normal;
 
   font-family: "Poetsen One", sans-serif;
   font-style: normal;

@@ -8,7 +8,7 @@ export const Login = () => {
   return (
     <div className="login">
       <section className="selogin">
-        <h1 className="h1login">Proyecto de WWW</h1>
+        <h1 className="h1login">Proyecto de 3W</h1>
 
         <h2 className="h2login">Pagina de gestion de eventos</h2>
 

@@ -94,11 +94,11 @@
 
 .fa-square-xmark {
   margin: auto;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .fa-square-xmark:hover{
-  color: #ff5555;
+  color: #ff00008c;
 }
 
 .fa-pen-to-square {
@@ -107,5 +107,15 @@
 }
 
 .fa-pen-to-square:hover{
-  color: #57ce47;
+  color: #1eff0088;
+}
+
+.fa-envelope {
+  margin: auto;
+  font-size: 22px;
+
+}
+
+.fa-envelope:hover{
+  color: #0004ffa6;
 }

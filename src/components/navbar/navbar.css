@@ -1,0 +1,15 @@
+.naeventos {
+  display: flex;
+  justify-content: center;
+  margin: 2% 0 3% 0;
+}
+
+.bonaeventos {
+  width: 210px;
+  margin: 10px;
+  justify-content: center;
+}
+
+.linaeventos {
+  text-decoration: none;
+}

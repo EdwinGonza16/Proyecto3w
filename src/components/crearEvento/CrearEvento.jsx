@@ -1,4 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Profile } from "../profile/Profile";
 import "./crearEvento.css";
 
 export const CrearEvento = () => {
@@ -42,12 +43,13 @@ export const CrearEvento = () => {
 
   return (
     <>
+      <Profile />
       {isAuthenticated ? (
         <>
           <fieldset className="formcrearevento">
             <legend className="lefocrearevento">
               {" "}
-              Crea un evento para que las personas puedan asitir{" "}
+              Crea un evento para que las personas puedan asistir{" "}
             </legend>
             <form className="focrearevento" onSubmit={handleSubmit}>
               <div className="difocrearevento">
@@ -57,7 +59,7 @@ export const CrearEvento = () => {
                 <input
                   type="text"
                   name="titulo"
-                  className="infocrearevento"
+                  className="infocrearevento infocreareventoti"
                   required
                   maxLength="30"
                 />
@@ -70,7 +72,7 @@ export const CrearEvento = () => {
                 <input
                   type="text"
                   name="descripcion"
-                  className="infocrearevento"
+                  className="infocrearevento infocreareventode"
                   required
                   maxLength="100"
                 />
@@ -83,7 +85,7 @@ export const CrearEvento = () => {
                 <input
                   type="date"
                   name="fecha"
-                  className="infocrearevento"
+                  className="infocrearevento infocreareventofe"
                   required
                 />
               </div>
@@ -95,7 +97,7 @@ export const CrearEvento = () => {
                 <input
                   type="time"
                   name="hora"
-                  className="infocrearevento"
+                  className="infocrearevento infocreareventoho"
                   required
                 />
               </div>
@@ -107,7 +109,7 @@ export const CrearEvento = () => {
                 <input
                   type="text"
                   name="ubicacion"
-                  className="infocrearevento"
+                  className="infocrearevento infocreareventoub"
                   required
                   maxLength="50"
                 />
@@ -117,7 +119,7 @@ export const CrearEvento = () => {
                 <label htmlFor="categoria" className="lafocrearevento">
                   Categoria
                 </label>
-                <select className="infocrearevento" name="categoria" required>
+                <select className="infocrearevento infocreareventoca" name="categoria" required>
                   <option>Disfraces</option>
                   <option>Baby Shower</option>
                   <option>Boda</option>
@@ -127,7 +129,7 @@ export const CrearEvento = () => {
                 </select>
               </div>
 
-              <button type="submit" className="loginbuton">
+              <button type="submit" className="loginbuton bolocrearevento">
                 Crear evento
               </button>
             </form>
