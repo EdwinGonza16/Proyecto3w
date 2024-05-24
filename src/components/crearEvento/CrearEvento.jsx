@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Profile } from "../profile/Profile";
 import "./crearEvento.css";
+import Swal from "sweetalert2";
 
 export const CrearEvento = () => {
   const { isAuthenticated } = useAuth0();
@@ -30,14 +31,41 @@ export const CrearEvento = () => {
       })
       .then((response) => {
         if (response.status === 200) {
-          alert("evento creado con exito");
+          let timerInterval;
+          Swal.fire({
+            title: "Creando evento",
+            html: "Evento creado en <b></b> milisegundos.",
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading();
+              const timer = Swal.getPopup().querySelector("b");
+              timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+              }, 500);
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          })
         } else {
-          alert("a ocurrido un error");
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "A ocurrido un error intentelo nuevamente",
+            showConfirmButton: false,
+            timer: 1500,
+          });
         }
       })
       .catch((error) => {
         const err = error.message;
-        alert("la accion no se pudo ejecutar", err);
+        Swal.fire({
+          title: "A ocurrido un error",
+          text: "La accion no se pudo ejecutar",
+          icon: "question",
+        });
+        console.log(err)
       });
   };
 
@@ -119,7 +147,11 @@ export const CrearEvento = () => {
                 <label htmlFor="categoria" className="lafocrearevento">
                   Categoria
                 </label>
-                <select className="infocrearevento infocreareventoca" name="categoria" required>
+                <select
+                  className="infocrearevento infocreareventoca"
+                  name="categoria"
+                  required
+                >
                   <option>Disfraces</option>
                   <option>Baby Shower</option>
                   <option>Boda</option>

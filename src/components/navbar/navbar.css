@@ -1,11 +1,11 @@
 .naeventos {
   display: flex;
   justify-content: center;
-  margin: 2% 0 3% 0;
+  margin: .5% 0 2% 0;
 }
 
 .bonaeventos {
-  width: 210px;
+  width: 160px;
   margin: 10px;
   justify-content: center;
 }

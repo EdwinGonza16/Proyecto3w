@@ -3,6 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./eventos.css";
 import { Profile } from "../profile/Profile";
+import Swal from "sweetalert2";
 
 export const Eventos = () => {
   const [eventos, setEventos] = useState([]);
@@ -24,8 +25,25 @@ export const Eventos = () => {
     };
     fetch("https://api-eventos-3-w.onrender.com/eventos/" + id, requestInit)
       .then((res) => res.text())
-      .then((res) => console.log(res));
     getEventos();
+
+    let timerInterval;
+    Swal.fire({
+      title: "Eliminando evento",
+      html: "Evento eliminado en <b></b> milisegundos.",
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const timer = Swal.getPopup().querySelector("b");
+        timerInterval = setInterval(() => {
+          timer.textContent = `${Swal.getTimerLeft()}`;
+        }, 500);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    })
   };
 
   /* const handleEdit = (evento, id) => {
