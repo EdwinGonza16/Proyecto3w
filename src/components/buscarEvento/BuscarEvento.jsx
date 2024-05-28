@@ -4,12 +4,14 @@ import "./buscarEvento.css";
 
 export const BuscarEvento = () => {
   const [buscar, setBuscar] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState([]);
   const [inputs, setInputs] = useState({
     nombre: "",
     categoria: "",
     fecha: "",
     ubicacion: "",
   });
+  /* const [searchevents, setSearchevents] = useState([]) */
 
   const searchEvent = () => {
     fetch("https://api-eventos-3-w.onrender.com/eventos")
@@ -37,21 +39,54 @@ export const BuscarEvento = () => {
 
     /* setInputs(newInputs[name]); */
 
-    console.log(newInputs[name])
-    // Estado para saber cuál input deshabilitar
+    return newInputs[name];
+    /* console.log(searchevents) */
   };
 
+  // Estado para saber cuál input deshabilitar
   const [disabled, setDisabled] = useState("");
 
   useEffect(() => {
     searchEvent();
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    /* inputs.find */
+
+    let propiedadNoVacia = null;
+
+    for (const key in inputs) {
+      if (inputs[key] !== "") {
+        propiedadNoVacia = { key, value: inputs[key] };
+        break; // Sale del bucle una vez encontrada la propiedad no vacía
+      }
+    }
+
+    if (propiedadNoVacia) {
+      const filtered = buscar.filter(
+        (buscar) => buscar[propiedadNoVacia.key] === propiedadNoVacia.value
+      );
+      console.log(filtered)
+      setFilteredEvents(filtered);
+      /* setBuscar(filtered); */
+    } else {
+      setFilteredEvents(buscar); // Si no hay input, mostrar todos los eventos
+    }
+
+    /* console.log(propiedadNoVacia)
+    console.log(buscar) */
+
+    /* return buscar */
+    /* console.log(propiedadNoVacia); */
+  };
+
   return (
     <>
       <Profile />
 
-      <form className="inbobueventos">
+      <form className="inbobueventos" onSubmit={handleSubmit}>
         <input
           className="inbueventos"
           type="text"
@@ -87,12 +122,14 @@ export const BuscarEvento = () => {
           onChange={handleChange}
           disabled={disabled !== "" && disabled !== "fecha"}
         />
-        <button className="loginbuton bobueventos">Realizar busqueda</button>
+        <button className="loginbuton bobueventos" type="submit">
+          Realizar busqueda
+        </button>
       </form>
 
       <fieldset className="fieldseteventos">
         <legend className="legendeventos">
-          Eventos a los que puedes asistir
+          Busca el evento al que deseas asistir
         </legend>
         <table className="taeventos">
           <thead className="theadeventos">
@@ -106,15 +143,15 @@ export const BuscarEvento = () => {
             </tr>
           </thead>
           <tbody>
-            {buscar.map((buscar) => (
-              <tr className="tbodytreventos" key={buscar.id}>
-                <th className="tbtieventos">{buscar.titulo}</th>
-                <th className="tbdeeventos">{buscar.descripcion}</th>
-                <th className="tbfeeventos">{buscar.fecha}</th>
-                <th className="tbhoeventos">{buscar.hora}</th>
-                <th className="tbudeventos">{buscar.ubicacion}</th>
-                <th className="tbcaeventos">{buscar.categoria}</th>
-              </tr>
+            {filteredEvents.map((evento) => (
+            <tr className="tbodytreventos" key={evento.id}>
+              <th className="tbtieventos">{evento.titulo}</th>
+              <th className="tbdeeventos">{evento.descripcion}</th>
+              <th className="tbfeeventos">{evento.fecha}</th>
+              <th className="tbhoeventos">{evento.hora}</th>
+              <th className="tbudeventos">{evento.ubicacion}</th>
+              <th className="tbcaeventos">{evento.categoria}</th>
+            </tr>
             ))}
           </tbody>
         </table>
