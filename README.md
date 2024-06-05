@@ -1,3 +1,61 @@
+# PROYECTO 3W
+
+### Presentado por
+
+- ÁLVARO ANDRÉS HURTADO VALLECILLA 1958463
+- CARLOS ALEJANDRO TAMAYO RIAÑO 1859896
+- EDWIN GONZÁLEZ GÓMEZ 1866066
+- JOSÉ DANIEL OSPINA HINCAPIÉ 1958374
+
+### Visión del proyecto:
+
+Se desarrolla una aplicación interactiva de gestión de eventos que permitirá a los usuarios crear, buscar, inscribirse y gestionar eventos de diferentes temáticas y tamaños. El objetivo busca que la aplicación web pueda gestionar todos los requerimientos necesarios para su buen funcionamiento. Obteniendo como resultado una aplicación funcional que satisfaga las necesidades requeridas al momento de utilizarse.
+
+## REQUERIMIENTOS FUNCIONALES:
+
+Registrarse e iniciar sesión para acceder a sus perfiles. Crear eventos, especificando detalles como: título, descripción, fecha, hora, ubicación, y categoría. Buscar eventos por nombre, categoría, ubicación o fecha.
+Inscribirse en eventos abiertos a la participación pública. Gestionar sus eventos creados, con la opción de editar o cancelar eventos. Visualizar una lista de los eventos a los que se han inscrito y gestionar su participación.
+
+
+## REQUERIMIENTOS NO FUNCIONALES:
+
+### Autenticación de Usuario:
+- Registro de cuentas de usuario con verificación de email.
+- Inicio de sesión con autenticación y manejo seguro de sesiones.
+- Recuperación de contraseñas y actualización de datos de perfil.
+
+### Gestión de Eventos:
+- Formulario de creación de eventos con validación de campos.
+- Edición y eliminación de eventos por parte del creador.
+- Formularios para visualizar eventos por fecha.
+- Categorización de eventos para facilitar la búsqueda.
+
+### Interfaz de Usuario Amigable:
+- Navegación intuitiva con una experiencia de usuario coherente y agradable.
+- Diseño responsive que se adapta a diferentes tamaños de pantalla y dispositivos.
+- Tematización y uso de componentes gráficos modernos.
+
+### Búsqueda y Filtrado de Eventos:
+- Funcionalidad de búsqueda de texto completo.
+- Filtros por categoría, fecha y ubicación.
+
+### Inscripción y Gestión de Participantes:
+- Inscripción de usuarios a eventos con gestión de lista de asistencia.
+- Cancelación de la inscripción a eventos.
+
+### Backend Robusto y Escalable:
+- API REST para el manejo de las operaciones relacionadas con eventos y usuarios.
+- Persistencia de datos en un sistema de gestión de bases de datos.
+- Manejo de errores y mensajes de respuesta claros al cliente.
+
+### Seguridad y Protección de Datos:
+- Implementación de buenas prácticas de seguridad para proteger la información sensible.
+- Uso de tokens JWT o similares para la gestión de sesiones.
+
+### Documentación:
+- Código fuente comentado para una fácil comprensión y mantenimiento.
+- Uso de herramientas como Swagger para documentar la API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
